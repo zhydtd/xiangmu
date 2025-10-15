@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品展示 - 乡味工坊</title>
+  <meta name="description" content="乡味工坊产品展示：经典款、文创款、定制款农产品">
+  <meta name="keywords" content="乡味工坊,农产品,经典款,文创款,定制款">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">乡味工坊</div>
+    <nav>
+      <a href=" ">首页</a >
+      <a href="products.html">产品</a >
+      <a href="booking.html">预约体验</a >
+    </nav>
+  </header>
+
+  <section class="products">
+    <h2>产品展示</h2>
+    
+    <div class="product-list">
+      <div class="product-item" onclick="showDetail('经典款', '传统工艺制作，保留食材原味。')">
+        < img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637" alt="经典款">
+        <h3>经典款</h3>
+      </div>
+      
+      <div class="product-item" onclick="showDetail('文创款', '融合地方文化的创意农产品。')">
+        < img src="https://images.unsplash.com/photo-1576613109621-3c4afd1e5f06" alt="文创款">
+        <h3>文创款</h3>
+      </div>
+      
+      <div class="product-item" onclick="showDetail('定制款', '个性化定制礼盒，送礼佳品。')">
+        < img src="https://images.unsplash.com/photo-1559598677-6515f3d70f6b" alt="定制款">
+        <h3>定制款</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品详情弹窗 -->
+  <div id="detailModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">产品名称</h2>
+      <p id="modalDesc">产品描述</p >
+    </div>
+  </div>
+
+  <footer>
+    <p>联系电话：400-123-4567 | 邮箱：info@xiangwei.com</p >
+  </footer>
+
+  <script>
+    let modal = document.getElementById("detailModal");
+    let modalTitle = document.getElementById("modalTitle");
+    let modalDesc = document.getElementById("modalDesc");
+
+    function showDetail(title, desc) {
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
